@@ -208,6 +208,9 @@ def fit_all(N, iters=6):
 ```
 
 ```{python example}
+# NOTE (ordering): this chunk draws from rng_sim and must run immediately
+# before `simulate-null`. Deleting it, or re-running it in isolation, advances
+# the stream and changes every downstream number in the report.
 example = sample(1)[0]
 ex_a, ex_b = (v[0] for v in fit_all(example))
 print(f"example dataset: total {int(example.sum())}, "
